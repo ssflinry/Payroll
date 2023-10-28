@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#3F51B5"
+    tools:context=".ConsentTermActivity">
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="412dp"
+        android:layout_height="59dp"
+        android:background="#154E99"
+        android:scrollbarThumbHorizontal="@drawable/form"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="243dp"
+        android:layout_height="27dp"
+        android:text="Termo de Consentimento"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="349dp"
+        android:layout_height="375dp"
+        android:text="Caro usuário,
+Este termo de consentimento é apresentado a você como parte da nossa política de privacidade. Ao usar nosso aplicativo, você concorda expressamente com a coleta, uso e divulgação de suas informações pessoais conforme descrito neste documento.
+
+Ao aceitar este termo de consentimento, você concorda em cumprir todas as políticas e termos do nosso aplicativo. Se você não concorda com esta política, não use nosso aplicativo.
+
+Este termo de consentimento pode ser alterado de tempos em tempos, e as alterações entrarão em vigor imediatamente após a publicação das mesmas. Aconselhamos que você revise periodicamente este termo de consentimento para estar ciente de quaisquer alterações.
+
+Agradecemos por escolher nosso aplicativo e esperamos fornecer a você a melhor experiência possível. Se tiver alguma dúvida ou preocupação sobre este termo de consentimento ou nossa política de privacidade, entre em contato conosco pelo e-mail fornecido em nosso aplicativo.
+Atenciosamente,
+
+Equipe do aplicativo"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backButton2"
+        android:layout_width="167dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#154E99"
+        android:text="Voltar"
+        android:textColorHighlight="#3F51B5"
+        android:textColorLink="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956"
+        app:rippleColor="#3F51B5"
+        app:strokeColor="#3F51B5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

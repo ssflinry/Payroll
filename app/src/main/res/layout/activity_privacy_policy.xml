@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrivacyPolicyActivity">
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="416dp"
+        android:layout_height="56dp"
+        android:background="#154E99"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/backButton1"
+        android:layout_width="151dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#154E99"
+        android:text="Voltar"
+        android:textColorHighlight="#154E99"
+        android:textColorLink="#154E99"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/politica_de_privacidade"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="372dp"
+        android:layout_height="572dp"
+        android:text="A privacidade é um direito fundamental e, como tal, levamos muito a sério. Esta Política de Privacidade explica como tratamos seus dados pessoais quando você usa nosso aplicativo e seus recursos.
+Coletamos informações sobre você quando você usa nosso aplicativo, incluindo informações de identificação pessoal, como nome, endereço de e-mail, endereço IP e informações de localização. Usamos essas informações para fornecer o melhor serviço possível e para melhorar a experiência do usuário.
+Também usamos cookies e outras tecnologias semelhantes para coletar informações sobre como você usa nosso aplicativo e para personalizar sua experiência. Essas tecnologias nos permitem armazenar informações sobre suas preferências e histórico de navegação, tornando sua experiência mais eficiente e personalizada.
+Não compartilhamos suas informações pessoais com terceiros, exceto quando necessário para fornecer o serviço solicitado ou conforme exigido por lei. Sempre que compartilhamos informações pessoais com terceiros, garantimos que as mesmas medidas de segurança e proteção de dados sejam aplicadas.
+Implementamos medidas de segurança para proteger suas informações pessoais contra acesso não autorizado, uso ou divulgação. Essas medidas incluem a criptografia de dados e a limitação do acesso às informações pessoais apenas às pessoas autorizadas.
+Ao usar nosso aplicativo, você concorda com os termos desta Política de Privacidade. Se você não concorda com esta política, não use nosso aplicativo. Esta Política de Privacidade pode ser alterada de tempos em tempos, e as alterações entrarão em vigor imediatamente após a publicação das mesmas. Aconselhamos que você revise periodicamente esta Política de Privacidade para estar ciente de quaisquer alterações.
+"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

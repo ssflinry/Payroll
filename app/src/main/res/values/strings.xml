@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Application</string>
+    <string name="politica_de_privacidade">Politica de Privacidade</string>
+    <string name="sair">Sair</string>
+    <string name="bem_vindo">Bem vindo!</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="e_mail_ou_cpf">E-mail ou CPF</string>
+    <string name="senha">Senha</string>
+    <string name="termo_de_consentimento">Termo de Consentimento</string>
+    <string name="entrar">Entrar</string>
+    <string name="confirma_o_de_senha">Confirmação de Senha</string>
+    <string name="nova_senha">Nova Senha</string>
+    <string name="confirmar">Confirmar</string>
+</resources>
