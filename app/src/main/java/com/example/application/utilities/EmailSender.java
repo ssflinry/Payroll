@@ -9,10 +9,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class EmailSender {
-    private static final String SMTP_HOST = "smtp.gmail.com";
-    private static final String SMTP_PORT = "465";
-    private static final String SMTP_USERNAME = "hendrickson.macallister@gmail.com";
-    private static final String SMTP_PASSWORD = "aggd qqia rksf xctf";
+    private static final String SMTP_HOST = "?";
+    private static final String SMTP_PORT = "?";
+    private static final String SMTP_USERNAME = "?";
+    private static final String SMTP_PASSWORD = "?";
 
     public static boolean sendEmail(String to, String subject, String messageBody) {
         Properties props = new Properties();
