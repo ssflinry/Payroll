@@ -8,15 +8,14 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.application.model.dao.DataDAO;
 import com.example.application.model.bean.Data;
-import com.example.application.model.dao.UserDAO;
+import com.example.application.model.dao.DataController;
+import com.example.application.model.dao.UserController;
 import com.example.application.utilities.FormatadorValores;
 
 import java.util.List;
 
 public class UserperflActivity extends AppCompatActivity {
-
     private EditText nomeCompleto, cargo, funcionario_id, cpf, pis, rg, dataAdmissao;
     private ImageView backButton4;
     private String token;
@@ -52,9 +51,9 @@ public class UserperflActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void fill() {
-        DataDAO dataDAO = new DataDAO();
-        UserDAO userDAO = new UserDAO();
-        List<Data> lista = dataDAO.getAll(userDAO.obterFuncionarioId(token));
+        DataController dataController = new DataController();
+        UserController userController = new UserController();
+        List<Data> lista = dataController.getAll(userController.obterFuncionarioId(token));
 
         if (!lista.isEmpty()) {
             Data data = lista.get(0);

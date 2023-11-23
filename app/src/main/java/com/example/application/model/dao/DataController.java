@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataDAO {
+public class DataController {
 
     public List<Data> getAll(int funcionario_id) {
         List<Data> lista = new ArrayList<>();

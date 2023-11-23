@@ -1,5 +1,6 @@
 package com.example.application;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -7,15 +8,19 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.application.model.bean.Ponto;
-import com.example.application.model.dao.PontoDAO;
-import com.example.application.model.dao.UserDAO;
+import com.example.application.model.dao.PontoController;
 import com.example.application.utilities.FormatadorValores;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class PontoListActivity extends AppCompatActivity {
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +30,12 @@ public class PontoListActivity extends AppCompatActivity {
 
         String token = getIntent().getStringExtra("token");
 
-        PontoDAO pontoDAO = new PontoDAO();
-        UserDAO userDAO = new UserDAO();
+        PontoController pontoController = new PontoController();
 
-        List<Ponto> listaPontos = pontoDAO.obterPontosDoFuncionario(userDAO.obterFuncionarioId(token));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        sdf.setTimeZone(TimeZone.getTimeZone("America/Sao_Paulo"));
+
+        List<Ponto> listaPontos = pontoController.obterPontosDoFuncionario(pontoController.obterPontoStatusId(pontoController.obterFuncionarioId(token), sdf.format(new Date())));
 
         List<String> listaRegistros = new ArrayList<>();
         for (Ponto ponto : listaPontos) {

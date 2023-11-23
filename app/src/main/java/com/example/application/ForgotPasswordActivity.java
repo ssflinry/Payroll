@@ -1,6 +1,9 @@
 package com.example.application;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +15,6 @@ import com.example.application.utilities.EmailSender;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     private EditText editTextEmail;
-    private Button buttonResetPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,23 +22,35 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
         editTextEmail = findViewById(R.id.editTextEmail);
-        buttonResetPassword = findViewById(R.id.buttonResetPassword);
+        Button buttonResetPassword = findViewById(R.id.buttonResetPassword);
 
         buttonResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(ForgotPasswordActivity.this);
+                progressDialog.setMessage("Enviando e-mail...");
+                progressDialog.show();
+
                 String userEmail = editTextEmail.getText().toString();
+                String confirmationCode = EmailSender.generateConfirmationCode();
+                boolean emailSent = EmailSender.sendConfirmationCode(ForgotPasswordActivity.this,userEmail, confirmationCode);
 
-                boolean emailSent = EmailSender.sendEmail(userEmail, "Redefinição de Senha", "Aqui está o link para redefinir sua senha.");
-
-                if (emailSent) {
-                    Toast.makeText(ForgotPasswordActivity.this, "E-mail de redefinição de senha enviado com sucesso.", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Falha no envio do email, exiba uma mensagem de erro
-                    Toast.makeText(ForgotPasswordActivity.this, "Falha ao enviar o e-mail de redefinição de senha.", Toast.LENGTH_SHORT).show();
-                }
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        if (emailSent) {
+                            Intent intent = new Intent(ForgotPasswordActivity.this, ConfirmationActivity.class);
+                            intent.putExtra("CONFIRMATION_CODE", confirmationCode);
+                            intent.putExtra("email", userEmail);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(ForgotPasswordActivity.this, "Falha ao enviar o email de redefinição de senha.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, 3000);
             }
         });
+}
 
     }
-}

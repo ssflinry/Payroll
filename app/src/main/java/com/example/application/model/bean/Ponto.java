@@ -4,11 +4,17 @@ import java.util.Date;
 
 public class Ponto {
     private int id;
-    private int funcionario_id;
+    private int pontoStatus_id;
     private Date dataHora;
     private String tipo;
 
+    public int getPontoStatus_id() {
+        return pontoStatus_id;
+    }
 
+    public void setPontoStatus_id(int pontoStatus_id) {
+        this.pontoStatus_id = pontoStatus_id;
+    }
 
     public int getId() {
         return id;
@@ -18,13 +24,6 @@ public class Ponto {
         this.id = id;
     }
 
-    public int getFuncionario_id() {
-        return funcionario_id;
-    }
-
-    public void setFuncionario_id(int funcionario_id) {
-        this.funcionario_id = funcionario_id;
-    }
 
     public Date getDataHora() {
         return dataHora;

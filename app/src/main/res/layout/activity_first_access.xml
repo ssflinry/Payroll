@@ -8,6 +8,19 @@
     tools:context=".FirstAccessActivity">
 
     <ImageView
+        android:id="@+id/backButtonBool"
+        android:layout_width="49dp"
+        android:layout_height="31dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024"
+        app:srcCompat="@drawable/back_white_button_icon_227869" />
+
+    <ImageView
         android:id="@+id/imageView7"
         android:layout_width="449dp"
         android:layout_height="318dp"
@@ -31,8 +44,8 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="261dp"
-        android:layout_height="260dp"
+        android:layout_width="281dp"
+        android:layout_height="551dp"
         android:background="@drawable/form"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,50 +54,72 @@
         app:layout_constraintVertical_bias="0.498" />
 
 
-    <EditText
-        android:id="@+id/editTextNovaSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/nova_senha"
-        android:inputType="textPassword"
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="97dp"
+        android:layout_height="95dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.198"
+        app:srcCompat="@drawable/senha" />
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="187dp"
+        android:layout_height="157dp"
+        android:text=""
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        tools:ignore="TextFields"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintVertical_bias="0.427" />
+
+    <EditText
+        android:id="@+id/editTextNovaSenha"
+        android:layout_width="221dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="@string/nova_senha"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.612"
+        tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/editTextConfirmacaoSenha"
-        android:layout_width="218dp"
-        android:layout_height="60dp"
+        android:layout_width="221dp"
+        android:layout_height="50dp"
         android:layout_below="@id/editTextNovaSenha"
         android:autofillHints=""
         android:hint="@string/confirma_o_de_senha"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/buttonConfirmar"
         android:layout_width="164dp"
         android:layout_height="53dp"
+        android:layout_below="@id/editTextConfirmacaoSenha"
         android:backgroundTint="#154E99"
         android:text="@string/confirmar"
-        android:layout_below="@id/editTextConfirmacaoSenha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.812" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

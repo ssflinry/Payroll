@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class UserDAO {
+public class UserController {
     public User obterUser(String user, String pass) {
         try {
             Connection conn = Conexao.conectar();
@@ -65,8 +65,6 @@ public class UserDAO {
 
         return funcionarioId;
     }
-
-
 
     public boolean updateUserPasswordAndFirstAccess(String token, String novaSenha, int firstAccess) {
         Connection conn = null;

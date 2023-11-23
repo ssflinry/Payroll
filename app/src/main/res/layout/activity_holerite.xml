@@ -168,21 +168,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.586" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="129dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#154E99"
-        android:clickable="false"
-        android:enabled="false"
-        android:text="Salvar"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
-
     <ImageView
         android:id="@+id/searchButton"
         android:layout_width="57dp"
@@ -233,5 +218,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view10"
         app:layout_constraintVertical_bias="0.150" />
+
+    <Button
+        android:id="@+id/salvarPdf"
+        android:layout_width="164dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#154E99"
+        android:text="@string/salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

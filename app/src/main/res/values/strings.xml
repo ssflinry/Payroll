@@ -11,4 +11,12 @@
     <string name="confirma_o_de_senha">Confirmação de Senha</string>
     <string name="nova_senha">Nova Senha</string>
     <string name="confirmar">Confirmar</string>
+    <string name="c_digo_de_confirma_o">Código de Confirmação</string>
+    <string name="verificar_c_digo">Verificar Código</string>
+    <string name="salvar">Salvar</string>
+    <string name="redefinir_senha">Redefinir Senha</string>
+    <string name="e_mail">E-mail</string>
+    <string name="para_redefinir_sua_senha_insira_o_endere_o_de_e_mail_associado_sua_conta_enviaremos_a_voc_um_c_digo_de_confirma_o_para_proceder_com_a_altera_o_da_senha">Para redefinir sua senha, insira o endereço de e-mail associado à sua conta. Enviaremos a você um código de confirmação para proceder com a alteração da senha.</string>
+    <string name="alterar_senha">Alterar Senha</string>
+    <string name="ajuda">Ajuda</string>
 </resources>

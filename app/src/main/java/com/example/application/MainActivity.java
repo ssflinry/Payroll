@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.application.model.bean.User;
-import com.example.application.model.dao.UserDAO;
+import com.example.application.model.dao.UserController;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,11 +39,12 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            User user = new UserDAO().obterUser(username, password);
+            User user = new UserController().obterUser(username, password);
             if (user != null) {
                 if (user.getFirst_access() == 1) {
                     Intent intent = new Intent(MainActivity.this, FirstAccessActivity.class);
                     intent.putExtra("token", user.getToken());
+                    intent.putExtra("msg", "Bem-vindo ao nosso aplicativo! Por favor, defina uma senha para sua conta preenchendo os campos abaixo:");
                     startActivity(intent);
                     finish();
                 } else {

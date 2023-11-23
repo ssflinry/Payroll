@@ -2,8 +2,8 @@ package com.example.application.model.dao;
 
 import android.util.Log;
 
-import com.example.application.model.connection.Conexao;
 import com.example.application.model.bean.Holerite;
+import com.example.application.model.connection.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HoleriteDAO {
+public class HoleriteController {
 
     public List<Holerite> getByMonthAndYear(int funcionario_id, int selectedMonth, int selectedYear) {
         List<Holerite> lista = new ArrayList<>();
@@ -67,6 +67,6 @@ public class HoleriteDAO {
 
         return lista;
     }
-
 }
+
 

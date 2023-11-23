@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238728817260",
+    "project_id": "payroll-firebase",
+    "storage_bucket": "payroll-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238728817260:android:698f6a91ca8babdaf9c649",
+        "android_client_info": {
+          "package_name": "com.example.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxBaN-11risMnTDICTTK7w4XkmuMbE_B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

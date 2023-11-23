@@ -1,5 +1,6 @@
 package com.example.application.utilities;
 
+import java.text.DateFormatSymbols;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -80,4 +81,16 @@ public class FormatadorValores {
         sdf.setTimeZone(TimeZone.getTimeZone("America/Sao_Paulo"));
         return sdf.format(date);
     }
+
+    public static String getMesPorExtenso(int numeroMes) {
+        String[] meses = new DateFormatSymbols(new Locale("pt", "BR")).getMonths();
+        if (numeroMes >= 1 && numeroMes <= 12) {
+            String mesPorExtenso = meses[numeroMes - 1];
+            mesPorExtenso = mesPorExtenso.substring(0, 1).toUpperCase() + mesPorExtenso.substring(1).toLowerCase();
+            return mesPorExtenso;
+        } else {
+            return "Mês inválido";
+        }
+    }
+
 }

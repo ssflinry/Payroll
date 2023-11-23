@@ -1,10 +1,13 @@
 package com.example.application;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,8 +49,43 @@ public class MenuActivity extends AppCompatActivity {
         initializeElements(R.id.ProfileLabel, R.id.ProfileIcon, R.id.ProfileImageView);
         initializeElements(R.id.HoleriteLabel, R.id.HoleriteIcon, R.id.HoleriteImageView);
         initializeElements(R.id.CheckInLabel, R.id.CheckInIcon, R.id.CheckInImageView);
+        ImageView menuButton = findViewById(R.id.menuButton);
 
         token = getIntent().getStringExtra("token");
+
+        menuButton.setOnClickListener(v -> {
+            PopupMenu popupMenu = new PopupMenu(this, v);
+            popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+
+            popupMenu.setOnMenuItemClickListener(item -> {
+                if (item.getItemId() == R.id.option1) {
+                    showProgressDialog();
+                    Intent intent = new Intent(MenuActivity.this, FirstAccessActivity.class);
+                    intent.putExtra("token", token);
+                    intent.putExtra("back", true);
+                    intent.putExtra("msg", "Digite a nova senha e a confirme. Lembre-se de criar uma senha forte, contendo uma combinação de letras, números e caracteres especiais para manter sua conta segura.");
+                    startActivity(intent);
+                    return true;
+                } else if (item.getItemId() == R.id.option2) {
+                    showProgressDialog();
+                    Intent intent = new Intent(MenuActivity.this, HelpActivity.class);
+                    intent.putExtra("token", token);
+                    startActivity(intent);
+                    return true;
+                } else if (item.getItemId() == R.id.option3) {
+                    showProgressDialog();
+                    Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+
+
+            popupMenu.show();
+        });
 
         setupClickListeners();
     }
@@ -69,10 +107,28 @@ public class MenuActivity extends AppCompatActivity {
     }
     private void setOnClickAction(View view, Class<?> activityClass) {
         View.OnClickListener clickListener = v -> {
-            Intent intent = new Intent(MenuActivity.this, activityClass);
-            intent.putExtra("token", token);
-            startActivity(intent);
+                final ProgressDialog progressDialog = new ProgressDialog(MenuActivity.this);
+            progressDialog.setMessage("Carregando...");
+            progressDialog.show();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    progressDialog.dismiss();
+                    Intent intent = new Intent(MenuActivity.this, activityClass);
+                    intent.putExtra("token", token);
+                    startActivity(intent);
+                }
+            }, 2000);
         };
         view.setOnClickListener(clickListener);
+    }
+
+    private void showProgressDialog() {
+        final ProgressDialog progressDialog = new ProgressDialog(MenuActivity.this);
+        progressDialog.setMessage("Carregando...");
+        progressDialog.show();
+
+        new Handler().postDelayed(progressDialog::dismiss, 1000); // 1000 milliseconds (1 second)
     }
 }

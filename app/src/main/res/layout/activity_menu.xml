@@ -22,6 +22,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
 
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
@@ -97,6 +98,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.71" />
+
+
+    <ImageView
+        android:id="@+id/menuButton"
+        android:layout_width="50dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/configuracoes" />
 
     <ImageView
         android:id="@+id/ProfileIcon"
